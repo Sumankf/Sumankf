@@ -1,0 +1,22 @@
+''' 
+Demonstrating Porous Defenses Final
+Suman C. Karmakar
+SDEV-325 – Detecting Software Vulnerabilities
+Sec-6380
+Prof: David Gabello
+July 13, 2021
+University of Maryland Global Campus
+
+'''
+import hashlib
+# CWE-759: Use of a One-Way Hash without a Salt
+
+def storePassword(userName,Password):
+    hasher = hashlib.new('md5')
+    hasher.update(Password)
+    hashedPassword = hasher.digest()
+
+# UpdateUserLogin returns True on success, False otherwise
+
+    return updateUserLogin(userName,hashedPassword)
+print(storePassword)
